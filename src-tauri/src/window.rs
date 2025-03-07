@@ -18,6 +18,7 @@ pub fn open_unique_window(handle: &tauri::AppHandle, label: &str, _url: Option<S
                     WebviewWindowBuilder::new(handle, label, WebviewUrl::App("about_static.html".into()))
                         .title("About")
                         .resizable(false)
+                        .maximizable(false)
                         .inner_size(300.0, 350.0)
                         .build()?;
                 },
@@ -25,6 +26,7 @@ pub fn open_unique_window(handle: &tauri::AppHandle, label: &str, _url: Option<S
                     WebviewWindowBuilder::new(handle, label, WebviewUrl::App("".into()))
                         .title("Settings")
                         .resizable(false)
+                        .maximizable(false)
                         .inner_size(300.0, 250.0)
                         .build()?;
                 },

@@ -13,7 +13,7 @@ dist-ssr
 *.local
 raw
 bundle_*
-
+*sync*
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
