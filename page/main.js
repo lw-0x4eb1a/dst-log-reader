@@ -1,7 +1,7 @@
 // high light the log-not-found paragraph
 const logNotFound = document.getElementById('log-not-found');
 if (location.hash === '#log-not-found') {
-  logNotFound.classList.add('text-red-500');
+  logNotFound.style.color = 'red';
 }
 
 // setup download links
