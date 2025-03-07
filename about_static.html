@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+  </head>
+  <link rel="stylesheet" href="./src/App.css">
+  <script>
+    const invoke = window.__TAURI__.core.invoke;
+    const get_verison = window.__TAURI__.app.getVersion;
+    function open_url(url) {
+      invoke('open_url', { url });
+    }
+
+    get_verison().then((res) => {
+      document.getElementById('version').innerText = `version ${res}`;
+    });
+    
+  </script>
+  <body>
+      <div class="p-4 pt-8 h-screen bg-slate-200">
+        <h1 class="text-lg font-bold text-center">
+          Don't Starve Log Reader
+        </h1>
+        <p class="text-center text-gray-400" id="version">
+          version -
+        </p>
+        <img
+          width=100
+          draggable=false
+          src="./src-tauri/icons/icon.png"
+          alt="logo"
+          class="mx-auto mt-4"
+        />
+        <div class="mt-6 mb-4 h-px bg-gray-300">
+        </div>
+        <div class="text-center invisible">
+          <span 
+            class="hover:text-blue-500 cursor-pointer underline"
+            onclick="open_url('https://www.bing.com/')">
+            Discussion
+          </span>
+          <span class="mx-2 opacity-30">|</span>
+          <span
+            class="hover:text-blue-500 cursor-pointer underline"
+            onclick="open_url('https://www.github.com/luozhouyang/ds-log-reader')">
+            Source code
+          </span>
+        </div>
+        <p class="text-center mt-2">
+          By:&nbsp;
+          <span 
+            class="hover:text-blue-500 cursor-pointer underline"
+            onclick="open_url('https://space.bilibili.com/209631439')">
+            老王天天写Bug
+          </span>
+        </p>
+      </div>
+  </body>
+</html>

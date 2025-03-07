@@ -1,0 +1,13 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["*"],
+  "permissions": [
+    "core:default",
+    "opener:default",
+    "core:window:allow-set-title",
+    "core:event:allow-listen",
+    "dialog:allow-message"
+  ]
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日志阅读器</title>
+  <link rel="stylesheet" href="../output.css"/>
+</head>
+<body class="bg-sky-100 text-slate-700">
+  <div class="pt-10 *:mt-4 lg:mx-40 bg-white">
+    <h1 class="text-4xl md:text-4xl lg:text-5xl text-center text-sky-950">
+      饥荒日志阅读器
+    </h1>
+    <p class="text-xl text-slate-400 text-center">
+      用最快的速度找到游戏报错信息
+    </p>
+    <div class="flex justify-center">
+      <div class="border-2 p-2 cursor-pointer m-2 border-slate-500 rounded-sm hover:bg-slate-100">下载 Windows 版</div>
+      <div class="border-2 p-2 cursor-pointer m-2 border-slate-500 rounded-sm hover:bg-slate-100">下载 MacOS 版</div>
+    </div>
+    <div class="h-px bg-slate-300 m-x-10"></div>
+    <div class="p-4 text-lg">
+      <h2 class="font-bold">什么是日志？</h2>
+      <p>
+        日志是饥荒运行过程中生成的txt文件，里面详细地记录了游戏运行的信息。
+      </p>
+      <br/>
+      <h2 class="font-bold">日志文件在哪个位置？</h2>
+      <p>默认情况下，日志位于 <span class="font-mono bg-slate-100 p-1">文档 - Klei</span> 内，
+        它可能会出现在主目录、存档目录或是存档压缩包内，这和你的存档设置有关。</p>
+      <p>本软件会自动查找所有的饥荒日志文件，帮你节约时间。</p>
+      <br/>
+      <h2 class="font-bold">如何找到最新的日志？</h2>
+      <p>如果你的游戏刚刚发生了崩溃/断开连接/服务器启动失败等问题，你可以打开本软件看到最新的日志，它将出现在列表最上方。</p>
+      <p id="log-not-found">在MacOS系统中，读取日志必须提供访问权限（设置 - 隐私与安全性 - 文件与文件夹 - 找到Log Reader，勾选“文稿”文件夹）。</p>
+      <br/>
+      <h2 class="font-bold">如何找到错误信息？</h2>
+      <p>如果日志中包含错误信息，你可以点击软件左侧的按钮来快速跳转，错误信息会标记为红色。如果错误和某个模组有关，
+        那么该模组就有很大的概率出现在错误信息内。
+      </p>
+      <p>对于一些特殊的问题，如游戏底层崩溃导致的闪退，它可能无法定位到具体的模组。</p>
+      <br/>
+      <h2 class="font-bold">这和模组错误追踪器有什么区别？</h2>
+      <p>日志阅读器是一个<span class="font-bold">软件</span>，相比于一些辅助错误查找的模组，如Bug Tracker、Insight，它有以下优点：</p>
+      <p>（1）无需在游戏内订阅和启用，对游戏的代码环境没有依赖，不会出现因为代码接口调整导致失效的惨案。</p>
+      <p>（2）完全独立，即使游戏已经退出，也能正常工作。</p>
+      <p>（3）交互性更强，你可以使用ctrl+F快速查找、复制错误信息到剪贴板、打开日志位置、或者另存为文件，这些都是模组无法做到的。</p>
+      <p>（4）界面更加好看。</p>
+      <br/>
+      <h2 class="font-bold">这个软件不能做什么？</h2>
+      <p>所有不会导致游戏崩溃的bug都无法被检测。</p>
+      <br/>
+      <h2 class="font-bold">这个软件开源吗？</h2>
+      <p>是的：</p>
+      <p>出于个人精力原因，不接受PR，如想扩展功能，可直接fork，进行二次开发。</p>
+    </div>
+  </div>
+  <script>
+    // high light the log-not-found paragraph
+    const logNotFound = document.getElementById('log-not-found');
+    if (location.hash === '#log-not-found') {
+      logNotFound.classList.add('text-red-500');
+    }
+  </script>
+</body>
+</html>

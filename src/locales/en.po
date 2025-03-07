@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2025-03-04 15:42+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/App.tsx:40
+msgid "About"
+msgstr "About"
+
+#: src/App.tsx:81
+msgid "Browse Logs"
+msgstr "Browse Logs"
+
+#: src/pages/LogBrowserPage/monaco.config.tsx:160
+msgid "Copy Error Messages"
+msgstr "Copy Error Messages"
+
+#: src/components/LogList/index.tsx:87
+msgid "Could not find the log file?"
+msgstr "Could not find the log file?"
+
+#: src/components/LogList/index.tsx:75
+msgid "ERROR: {dirError}"
+msgstr "ERROR: {dirError}"
+
+#: src/components/SidePanel/index.tsx:66
+msgid "File operation..."
+msgstr "File operation..."
+
+#: src/components/SidePanel/index.tsx:58
+msgid "Game info"
+msgstr "Game info"
+
+#: src/components/SidePanel/index.tsx:45
+msgid "Go to..."
+msgstr "Go to..."
+
+#: src/pages/LogBrowserPage/monaco.config.tsx:69
+msgid "In Game"
+msgstr "In Game"
+
+#: src/pages/LogBrowserPage/monaco.config.tsx:70
+msgid "In Mod"
+msgstr "In Mod"
+
+#: src/App.tsx:34
+msgid "Log Reader"
+msgstr "Log Reader"
+
+#: src/components/SidePanel/index.tsx:62
+msgid "Mod list"
+msgstr "Mod list"
+
+#: src/components/SidePanel/index.tsx:54
+msgid "Next error info"
+msgstr "Next error info"
+
+#: src/components/SidePanel/index.tsx:56
+msgid "Next game instance"
+msgstr "Next game instance"
+
+#: src/components/SidePanel/index.tsx:142
+msgid "No mod found"
+msgstr "No mod found"
+
+#: src/components/SidePanel/index.tsx:53
+msgid "Prev error info"
+msgstr "Prev error info"
+
+#: src/components/SidePanel/index.tsx:55
+msgid "Prev game instance"
+msgstr "Prev game instance"
+
+#: src/components/SidePanel/index.tsx:43
+msgid "QUICK COMMANDS"
+msgstr "QUICK COMMANDS"
+
+#: src/components/SidePanel/index.tsx:67
+msgid "Reveal in folder"
+msgstr "Reveal in folder"
+
+#: src/components/SidePanel/index.tsx:68
+msgid "Save as"
+msgstr "Save as"
+
+#: src/App.tsx:37
+msgid "Settings"
+msgstr "Settings"
+
+#: src/components/SidePanel/index.tsx:57
+msgid "Show info..."
+msgstr "Show info..."
+
+#: src/pages/LogBrowserPage/monaco.config.tsx:196
+msgid "Successfully copied error messages to clipboard."
+msgstr "Successfully copied error messages to clipboard."
+
+#: src/components/SidePanel/index.tsx:51
+msgid "This log contains error messages, click the button below to view."
+msgstr "This log contains error messages, click the button below to view."
