@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../output.css"/>
 </head>
 <body class="bg-sky-100 text-slate-700">
-  <div class="pt-10 *:mt-4 lg:mx-40 bg-white">
+  <div class="pt-10 *:mt-4 lg:mx-40 md:mx-20 bg-white">
     <h1 class="text-4xl md:text-4xl lg:text-5xl text-center text-sky-950">
       饥荒日志阅读器
     </h1>
@@ -15,6 +15,9 @@
       用最快的速度找到游戏报错信息
     </p>
     <div class="flex justify-center">
+      <img src="../icon_256.png" width="100" height="100"/>
+    </div>
+    <div class="flex justify-center" id="download">
       <div class="border-2 p-2 cursor-pointer m-2 border-slate-500 rounded-sm hover:bg-slate-100">下载 Windows 版</div>
       <div class="border-2 p-2 cursor-pointer m-2 border-slate-500 rounded-sm hover:bg-slate-100">下载 MacOS 版</div>
     </div>
@@ -51,16 +54,14 @@
       <p>所有不会导致游戏崩溃的bug都无法被检测。</p>
       <br/>
       <h2 class="font-bold">这个软件开源吗？</h2>
-      <p>是的：</p>
+      <p>是的：<a 
+        class="hover:text-sky-500 underline cursor-pointer"
+        target="_blank"
+        href="https://github.com/lw-0x4eb1a/dst-log-reader">https://github.com/lw-0x4eb1a/dst-log-reader</a></p>
       <p>出于个人精力原因，不接受PR，如想扩展功能，可直接fork，进行二次开发。</p>
+      <div class="h-40"></div>
     </div>
   </div>
-  <script>
-    // high light the log-not-found paragraph
-    const logNotFound = document.getElementById('log-not-found');
-    if (location.hash === '#log-not-found') {
-      logNotFound.classList.add('text-red-500');
-    }
-  </script>
+  <script src="../main.js"></script>
 </body>
 </html>

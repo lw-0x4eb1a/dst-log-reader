@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log Reader</title>
+  <link rel="stylesheet" href="../output.css"/>
+</head>
+<body class="bg-sky-100 text-slate-700">
+  <div class="pt-10 *:mt-4 lg:mx-40 md:mx-20 bg-white">
+    <h1 class="text-4xl md:text-4xl lg:text-5xl text-center text-sky-950">
+      Don't Starve Log Reader
+    </h1>
+    <p class="text-xl text-slate-400 text-center">
+      Locate game error messages in seconds.
+    </p>
+    <div class="flex justify-center">
+      <img src="../icon_256.png" width="100" height="100"/>
+    </div>
+    <div class="flex justify-center">
+      <div class="border-2 p-2 cursor-pointer m-2 border-slate-500 rounded-sm hover:bg-slate-100">Download for Windows</div>
+      <div class="border-2 p-2 cursor-pointer m-2 border-slate-500 rounded-sm hover:bg-slate-100">Download for MacOS</div>
+    </div>
+    <div class="h-px bg-slate-300 m-x-10"></div>
+    <div class="p-4 text-lg">
+      <h2 class="font-bold">What is a log?</h2>
+      <p>
+        Logs are txt files generated during the running of Don't Starve / Dont' Starve Together, which record detailed information about the game's information.
+      </p>
+      <br/>
+      <h2 class="font-bold">Where is the log file located?</h2>
+      <p>By default, logs are located in <span class="font-mono bg-slate-100 p-1">Documents - Klei</span>. 
+        They may appear in the main directory, cluster directory, or cluster archive, depending on your game settings.</p>
+      <p>This software automatically searches for all Don't Starve / Dont' Starve Together log files.</p>
+      <br/>
+      <h2 class="font-bold">How to find the latest log?</h2>
+      <p>If your game has recently crashed, disconnected from server, or failed to launch, you can open this software to see the latest log, which will appear at the top of the list.</p>
+      <p id="log-not-found">On MacOS systems, reading logs requires granting access permissions (Settings - Privacy & Security - Files and Folders - Find Log Reader, check the "Documents" folder).</p>
+      <br/>
+      <h2 class="font-bold">How to find error messages?</h2>
+      <p>If the log contains error messages, you can click the button on the left side of the software to quickly jump to them. Error messages will be highlighted in red. If the error is related to a mod, 
+        that mod is likely to appear in the error message.</p>
+      <p>For some specific issues, such as crashes in c level, it may not be able to pinpoint the exact mod.</p>
+      <br/>
+      <h2 class="font-bold">How is this different from mod error trackers?</h2>
+      <p>Log Reader is a <span class="font-bold">software</span>. Compared to some mods that assist with error tracking, such as Bug Tracker or Insight, it has the following advantages:</p>
+      <p>(1) No need to subscribe or enable it in the game. It is independent of the game's code environment, so it won't fail due to changes in code interfaces.</p>
+      <p>(2) Completely independent. It works normally even after the game has exited.</p>
+      <p>(3) More interactive. You can use Ctrl+F to quickly search, copy error messages to the clipboard, open the log location, or save it as a file, which game mods cannot do.</p>
+      <p>(4) A more visually appealing interface.</p>
+      <br/>
+      <h2 class="font-bold">What can't this software do?</h2>
+      <p>It cannot detect bugs that do not cause the game to crash.</p>
+      <br/>
+      <h2 class="font-bold">Is this software open source?</h2>
+      <p>Yes, see: <a 
+        class="hover:text-sky-500 underline cursor-pointer"
+        target="_blank"
+        href="https://github.com/lw-0x4eb1a/dst-log-reader">https://github.com/lw-0x4eb1a/dst-log-reader</a></p>
+      <p>Due to personal time constraints, PRs are not accepted. If you want to extend its functionality, feel free to fork and develop it further.</p>
+      <div class="h-40"></div>
+    </div>
+  </div>
+  <script src="../main.js"></script>
+</body>
+</html>

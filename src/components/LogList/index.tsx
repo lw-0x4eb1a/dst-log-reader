@@ -83,7 +83,8 @@ export default function LogList() {
         logs.map(v=> <LogItem {...v} key={`[${v.is_zip ? "zip": "file"}]${v.filepath}-${v.filename}`}/>)
       }
       <p className="mb-10 text-center">
-        <span className="underline cursor-pointer p-1 text-gray-100 hover:text-blue-300">
+        <span className="underline cursor-pointer p-1 text-gray-100 hover:text-blue-300"
+          onClick={()=> invoke("open_url", {"url": "http://logreader.lwdocs.cn/" + (window.currentLocale || "zh")})}>
           <Trans>Could not find the log file?</Trans>
         </span>
       </p>
