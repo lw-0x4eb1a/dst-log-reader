@@ -6,7 +6,7 @@ import ModifiedTime from "../ModifiedTime"
 import { getName } from "../../util"
 import { useIntersectionObserver } from "../../hooks"
 import { formatRunTime } from "../RunTime"
-import { Trans } from "@lingui/react/macro"
+import { Trans, useLingui } from "@lingui/react/macro"
 
 
 const rectStyle: React.CSSProperties = {
@@ -116,6 +116,7 @@ function LogItem(props: LogData) {
   const hasBug = hasLuaCrash || hasCCrash
   const div = useRef<HTMLDivElement>(null)
   const {appeared} = useIntersectionObserver({ref: div})
+  const {t} = useLingui()
 
   useEffect(()=> {
     if (appeared) {
@@ -154,7 +155,7 @@ function LogItem(props: LogData) {
       <ModifiedTime mtime={props.mtime}/>
       <span className="mx-3 opacity-50">|</span>
       <span>
-        Run for {formatRunTime(totalTime)}
+        {t`Run for`} {formatRunTime(totalTime)}
       </span>
       </p>
 

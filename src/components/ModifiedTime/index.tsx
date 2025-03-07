@@ -1,4 +1,6 @@
 import { useEffect, useReducer } from "react"
+import { i18n } from "@lingui/core"
+import { defineMessage, plural } from "@lingui/core/macro"
 
 type ModifiedTimeProps = {
   mtime: number,
@@ -11,10 +13,10 @@ function formatModifiedTime(mtime: number) {
   const current = Date.now() / 1000
   const dt = current - mtime
   if (dt <= 0) return "-"
-  if (dt <= 60) return "just now"
-  if (dt <= 60*60) return `${Math.floor(dt/60)} minutes ago`
-  if (dt <= 24*60*60) return `${Math.floor(dt/60/60)} hours ago`
-  if (dt <= 48*60*60) return "yesterday"
+  if (dt <= 60) return i18n._(defineMessage({message: "just now"}))
+  if (dt <= 60*60) return i18n._(plural(Math.floor(dt/60), {one: "# minute ago", other: "# minutes ago"}))
+  if (dt <= 24*60*60) return i18n._(plural(Math.floor(dt/60/60), {one: "# hour ago", other: "# hours ago"}))
+  if (dt <= 48*60*60) return i18n._(defineMessage({message: "yesterday"}))
   return new Date(mtime * 1000).toLocaleString()
 }
 

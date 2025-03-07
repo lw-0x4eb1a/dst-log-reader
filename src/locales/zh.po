@@ -13,6 +13,32 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. placeholder {0}: Math.floor(dt/60/60)
+#: src/components/ModifiedTime/index.tsx:18
+msgid "{0, plural, one {# hour ago} other {# hours ago}}"
+msgstr "{0, plural, one {#小时前} other {#小时前}}"
+
+#. placeholder {0}: Math.floor(dt/60)
+#: src/components/ModifiedTime/index.tsx:17
+msgid "{0, plural, one {# minute ago} other {# minutes ago}}"
+msgstr "{0, plural, one {#分钟前} other {#分钟前}}"
+
+#: src/components/ModifiedTime/index.tsx:18
+#~ msgid "{0} hours ago"
+#~ msgstr "{0}小时前"
+
+#: src/components/ModifiedTime/index.tsx:17
+#~ msgid "{0} minutes ago"
+#~ msgstr "{0}分钟前"
+
+#: src/components/RunTime/index.tsx:13
+msgid "{second} sec"
+msgstr "{second} 秒"
+
+#: src/components/RunTime/index.tsx:13
+msgid "{second} secs"
+msgstr "{second} 秒"
+
 #: src/App.tsx:40
 msgid "About"
 msgstr "关于"
@@ -25,7 +51,7 @@ msgstr "浏览游戏日志"
 msgid "Copy Error Messages"
 msgstr "复制错误信息"
 
-#: src/components/LogList/index.tsx:87
+#: src/components/LogList/index.tsx:88
 msgid "Could not find the log file?"
 msgstr "找不到日志文件?"
 
@@ -52,6 +78,10 @@ msgstr "游戏本体"
 #: src/pages/LogBrowserPage/monaco.config.tsx:70
 msgid "In Mod"
 msgstr "模组"
+
+#: src/components/ModifiedTime/index.tsx:16
+msgid "just now"
+msgstr "刚刚"
 
 #: src/App.tsx:34
 msgid "Log Reader"
@@ -89,6 +119,10 @@ msgstr "快捷操作台"
 msgid "Reveal in folder"
 msgstr "在文件夹中显示"
 
+#: src/components/LogList/index.tsx:158
+msgid "Run for"
+msgstr "运行时间:"
+
 #: src/components/SidePanel/index.tsx:68
 msgid "Save as"
 msgstr "另存为"
@@ -108,3 +142,7 @@ msgstr "已将错误信息复制到剪贴板。"
 #: src/components/SidePanel/index.tsx:51
 msgid "This log contains error messages, click the button below to view."
 msgstr "这个日志文件包含错误信息, 点击下方按钮快速跳转。"
+
+#: src/components/ModifiedTime/index.tsx:19
+msgid "yesterday"
+msgstr "昨天"

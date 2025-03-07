@@ -13,6 +13,7 @@ dist-ssr
 *.local
 raw
 bundle_*
+windows
 *sync*
 # Editor directories and files
 .vscode/*
@@ -20,6 +21,7 @@ bundle_*
 .idea
 .DS_Store
 *.suo
+Thumbs.db
 *.ntvs*
 *.njsproj
 *.sln
