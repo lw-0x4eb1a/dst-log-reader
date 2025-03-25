@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from '@tailwindcss/vite';
 import { lingui } from "@lingui/vite-plugin";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 const host = process.env.TAURI_DEV_HOST;
 
@@ -20,8 +21,16 @@ export default defineConfig(async () => ({
       babel: {
         plugins: ["@lingui/babel-plugin-lingui-macro"],
       }
-    }
-  ), tailwindcss(), lingui()],
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: "node_modules/monaco-editor/min/vs/**/*",
+          dest: "vs",
+        }
+      ]
+    }),
+    tailwindcss(), lingui()],
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   //

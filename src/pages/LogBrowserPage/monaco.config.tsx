@@ -24,6 +24,7 @@ setInterval(()=> {
   }
 }, 50)
 
+loader.config({paths: {vs: './vs'}})
 loader.init().then(monaco=> {
   monaco.languages.register({id: LANGUAGE_ID})
   monaco.languages.setMonarchTokensProvider(LANGUAGE_ID, {
