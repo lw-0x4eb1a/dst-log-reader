@@ -160,17 +160,13 @@ fn handle_menu_event(handle: &tauri::AppHandle, event: MenuEvent) {
                     if let Some(path) = path {
                         open_log_impl(
                             &handle2,
-                            handle2.get_webview_window("main").unwrap(),
                             LogPath::External(path.into_path().unwrap())
                         ).ok();
                     }
                 });
         }
         MenuEvent::OpenRecent(path) => {
-            open_log_impl(handle,
-                handle.get_webview_window("main").unwrap(),
-                path
-            ).ok();
+            open_log_impl(handle, path).ok();
         }
         MenuEvent::Settings => {
             open_unique_window(handle, "settings", None).ok();

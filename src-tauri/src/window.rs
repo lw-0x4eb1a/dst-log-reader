@@ -39,11 +39,10 @@ pub fn open_unique_window(handle: &tauri::AppHandle, label: &str, _url: Option<S
     Ok(())
 }
 
-pub fn open_log_impl<W>(handle: &tauri::AppHandle, window: W, 
-    path: LogPath) -> Result<(), tauri::Error>
-    where W: raw_window_handle::HasWindowHandle + raw_window_handle::HasDisplayHandle 
+pub fn open_log_impl(handle: &tauri::AppHandle, path: LogPath) -> Result<(), tauri::Error>
 {
     let label = path.to_label();
+    let window = handle.get_webview_window("main").unwrap();
     match handle.get_webview_window(&label) {
         Some(window) => {
             window.set_focus()?;
@@ -75,8 +74,8 @@ pub fn open_log_impl<W>(handle: &tauri::AppHandle, window: W,
                 .min_inner_size(400.0, 300.0)
                 .initialization_script(&format!("window.logPath = JSON.parse({});", 
                     json::JsonValue::String(path.to_ipc()).dump()))
-                .build()?;
-
+                .build()
+                .unwrap();
             let handle = handle.clone();
             window.listen("tauri://destroyed", move |_| {
                 let state = handle.state::<LogModelState>();
@@ -88,6 +87,6 @@ pub fn open_log_impl<W>(handle: &tauri::AppHandle, window: W,
 }
 
 #[tauri::command]
-pub fn open_log(handle: tauri::AppHandle, window: tauri::Window, filepath: String) -> Result<(), tauri::Error> {
-    open_log_impl(&handle, window, LogPath::External(filepath.into()))
+pub async fn open_log(handle: tauri::AppHandle, filepath: String) -> Result<(), tauri::Error> {
+    open_log_impl(&handle, LogPath::External(filepath.into()))
 }
