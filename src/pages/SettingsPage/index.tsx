@@ -2,11 +2,14 @@ import { useCallback, useEffect } from 'react'
 import { useSetting } from '../../hooks'
 import { emit } from '@tauri-apps/api/event'
 import { useLingui } from '@lingui/react/macro'
+import AiConfigFields from '../../components/AiPanel/AiConfigFields'
+import { useAiConfig } from '../../ai'
 
 export default function SettingsPage() {
-  const { i18n } = useLingui()
+  const { i18n, t } = useLingui()
   return (
     <div className="p-4 text-gray-800">
+      <h1 className="mb-2 text-lg font-bold">{t`Settings`}</h1>
       <h2 className="mb-1">语言 / Language</h2>
       <RadioGroup
         id="language"
@@ -16,8 +19,20 @@ export default function SettingsPage() {
         ]}
         defaultValue={i18n.locale || "en"}
       />
+      <div className="my-3 h-px bg-slate-300"/>
+      <h2 className="mb-1">{t`AI analysis`}</h2>
+      <AiSettings/>
     </div>
   )
+}
+
+function AiSettings() {
+  // the same hook the log sidebar uses, so both stay in sync
+  const [config, update] = useAiConfig()
+  const onChange = useCallback((next: typeof config)=> {
+    update(next)
+  }, [update])
+  return <AiConfigFields config={config} onChange={onChange}/>
 }
 
 type RadioOption = {

@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { useLingui } from '@lingui/react/macro'
 import type { LogComment, NavigateAction } from '../../pages/LogBrowserPage'
 import { formatRunTime } from '../RunTime'
+import AiPanel from '../AiPanel'
+import { AI_PROVIDERS, AI_PROVIDER_ORDER, configProblem, useAiConfig } from '../../ai'
 
 function showFile() {
   const label = WebviewWindow.getCurrent().label
@@ -36,6 +38,9 @@ export default function SidePanel(props: SidePanelProps) {
 
   const [showModList, setShowModList] = useState(false)
   const [showGameInfo, setShowGameInfo] = useState(false)
+  const [showAi, setShowAi] = useState(false)
+  const [aiConfig, updateAiConfig] = useAiConfig()
+  const aiProblem = configProblem(aiConfig)
 
   return (
     <div className="h-screen bg-blue-50 p-2 select-none text-gray-600"
@@ -66,14 +71,94 @@ export default function SidePanel(props: SidePanelProps) {
         <Section title={t`File operation...`}/>
         <Button onClick={showFile}>{t`Reveal in folder`}</Button>
         <Button onClick={()=> saveFile(logContent)}>{t`Save as`}</Button>
+        <Section title={t`AI analysis`}/>
+        <AiConfigFields config={aiConfig} onChange={updateAiConfig}/>
+        <button
+          disabled={!!aiProblem}
+          onClick={()=> setShowAi(true)}
+          className="mt-1 block w-full rounded-sm border border-blue-400 bg-blue-100 px-2 py-1             text-sm text-blue-700 transition-all cursor-pointer hover:bg-blue-200             disabled:cursor-not-allowed disabled:border-slate-300 disabled:bg-slate-100             disabled:text-slate-400">
+          {t`Analyze with AI`}
+        </button>
+        {
+          aiProblem &&
+          <p className="mt-0.5 text-[10px] text-red-400">
+            {aiProblem === "apiKey"
+              ? t`请填写 API Key`
+              : aiProblem === "model" ? t`请填写模型名称` : t`请填写接口域名`}
+          </p>
+        }
+        <div className="flex justify-end">
+          <span
+            onClick={()=> invoke("open_settings_window")}
+            className="cursor-pointer text-[10px] text-gray-400 underline hover:text-blue-400">
+            {t`More settings`}
+          </span>
+        </div>
         <div className="h-40"></div>
       </div>
+      <AiPanel open={showAi} onClose={()=> setShowAi(false)}/>
+    </div>
+  )
+}
+
+type AiConfigFieldsProps = {
+  config: ReturnType<typeof useAiConfig>[0],
+  onChange: ReturnType<typeof useAiConfig>[1],
+}
+
+const aiInputClass = "w-full rounded-sm border border-slate-300 bg-white/90 px-1.5 py-1 \
+  text-xs text-gray-600 outline-none focus:border-blue-400"
+
+function AiConfigFields(props: AiConfigFieldsProps) {
+  const { config, onChange } = props
+  const { t } = useLingui()
+  const preset = AI_PROVIDERS[config.provider]
+  return (
+    <div className="mt-1 space-y-1 select-text">
+      <select
+        value={config.provider}
+        onChange={e=> onChange({provider: e.target.value as any})}
+        className={aiInputClass + " cursor-pointer"}>
+        {
+          AI_PROVIDER_ORDER.map(provider=> 
+            <option key={provider} value={provider}>{AI_PROVIDERS[provider].label}</option>
+          )
+        }
+      </select>
+      <input
+        type="password"
+        value={config.apiKey}
+        spellCheck={false}
+        autoComplete="off"
+        placeholder={t`API Key`}
+        onChange={e=> onChange({apiKey: e.target.value})}
+        className={aiInputClass}
+      />
+      <input
+        type="text"
+        value={config.model}
+        spellCheck={false}
+        placeholder={preset.model || t`模型名称`}
+        onChange={e=> onChange({model: e.target.value})}
+        className={aiInputClass}
+      />
+      {
+        preset.needBaseUrl &&
+        <input
+          type="text"
+          value={config.baseUrl}
+          spellCheck={false}
+          placeholder={t`接口域名`}
+          onChange={e=> onChange({baseUrl: e.target.value})}
+          className={aiInputClass}
+        />
+      }
     </div>
   )
 }
 
 type ButtonProps = {
-  intent?: "danger" | "warning" | "success",
+  intent?: "danger" | "warning" | "success" | "ai",
   disable?: boolean,
   children: React.ReactNode,
   onClick?: ()=> void
@@ -93,6 +178,9 @@ function Button(props: ButtonProps) {
   let colorClass = "bg-white/90 hover:bg-slate-100 border-slate-300"
   if (props.intent === "danger") {
     colorClass = "bg-red-100 hover:bg-red-200 border-red-500"
+  }
+  else if (props.intent === "ai") {
+    colorClass = "bg-blue-100 hover:bg-blue-200 border-blue-400 text-blue-700"
   }
   return (
     <button

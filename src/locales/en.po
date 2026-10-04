@@ -47,11 +47,41 @@ msgstr "{second} secs"
 msgid "About"
 msgstr "About"
 
+#: src/pages/SettingsPage/index.tsx:23
+#: src/components/SidePanel/index.tsx:74
+msgid "AI analysis"
+msgstr "AI analysis"
+
+#: src/components/AiPanel/index.tsx:153
+msgid "AI 分析"
+msgstr "AI 分析"
+
+#: src/components/AiPanel/index.tsx:186
+msgid "AI 分析，仅供参考"
+msgstr "AI 分析，仅供参考"
+
+#: src/components/AiPanel/index.tsx:237
+#~ msgid "AI 正在阅读日志、游戏与模组代码，通常需要 10~60 秒。"
+#~ msgstr "AI 正在阅读日志、游戏与模组代码，通常需要 10~60 秒。"
+
+#: src/components/AiPanel/index.tsx:264
+msgid "AI 正在阅读日志、游戏与模组代码…"
+msgstr "AI 正在阅读日志、游戏与模组代码…"
+
+#: src/components/SidePanel/index.tsx:80
+msgid "Analyze with AI"
+msgstr "Analyze with AI"
+
+#: src/components/SidePanel/index.tsx:133
+#: src/components/AiPanel/AiConfigFields.tsx:57
+msgid "API Key"
+msgstr "API Key"
+
 #: src/App.tsx:81
 msgid "Browse Logs"
 msgstr "Browse Logs"
 
-#: src/pages/LogBrowserPage/monaco.config.tsx:160
+#: src/pages/LogBrowserPage/monaco.config.tsx:161
 msgid "Copy Error Messages"
 msgstr "Copy Error Messages"
 
@@ -63,23 +93,23 @@ msgstr "Could not find the log file?"
 msgid "ERROR: {dirError}"
 msgstr "ERROR: {dirError}"
 
-#: src/components/SidePanel/index.tsx:66
+#: src/components/SidePanel/index.tsx:71
 msgid "File operation..."
 msgstr "File operation..."
 
-#: src/components/SidePanel/index.tsx:58
+#: src/components/SidePanel/index.tsx:63
 msgid "Game info"
 msgstr "Game info"
 
-#: src/components/SidePanel/index.tsx:45
+#: src/components/SidePanel/index.tsx:50
 msgid "Go to..."
 msgstr "Go to..."
 
-#: src/pages/LogBrowserPage/monaco.config.tsx:69
+#: src/pages/LogBrowserPage/monaco.config.tsx:70
 msgid "In Game"
 msgstr "In Game"
 
-#: src/pages/LogBrowserPage/monaco.config.tsx:70
+#: src/pages/LogBrowserPage/monaco.config.tsx:71
 msgid "In Mod"
 msgstr "In Mod"
 
@@ -91,35 +121,43 @@ msgstr "just now"
 msgid "Log Reader"
 msgstr "Log Reader"
 
-#: src/components/SidePanel/index.tsx:62
+#: src/components/SidePanel/index.tsx:67
 msgid "Mod list"
 msgstr "Mod list"
 
-#: src/components/SidePanel/index.tsx:54
+#: src/components/SidePanel/index.tsx:94
+msgid "More settings"
+msgstr "More settings"
+
+#: src/components/SidePanel/index.tsx:59
 msgid "Next error info"
 msgstr "Next error info"
 
-#: src/components/SidePanel/index.tsx:56
+#: src/components/SidePanel/index.tsx:61
 msgid "Next game instance"
 msgstr "Next game instance"
 
-#: src/components/SidePanel/index.tsx:142
+#: src/components/SidePanel/index.tsx:230
 msgid "No mod found"
 msgstr "No mod found"
 
-#: src/components/SidePanel/index.tsx:53
+#: src/components/AiPanel/AiConfigFields.tsx:82
+msgid "OpenAI 兼容接口，例如 https://your-domain/v1"
+msgstr "OpenAI 兼容接口，例如 https://your-domain/v1"
+
+#: src/components/SidePanel/index.tsx:58
 msgid "Prev error info"
 msgstr "Prev error info"
 
-#: src/components/SidePanel/index.tsx:55
+#: src/components/SidePanel/index.tsx:60
 msgid "Prev game instance"
 msgstr "Prev game instance"
 
-#: src/components/SidePanel/index.tsx:43
+#: src/components/SidePanel/index.tsx:48
 msgid "QUICK COMMANDS"
 msgstr "QUICK COMMANDS"
 
-#: src/components/SidePanel/index.tsx:67
+#: src/components/SidePanel/index.tsx:72
 msgid "Reveal in folder"
 msgstr "Reveal in folder"
 
@@ -127,26 +165,163 @@ msgstr "Reveal in folder"
 msgid "Run for"
 msgstr "Run for"
 
-#: src/components/SidePanel/index.tsx:68
+#: src/components/SidePanel/index.tsx:73
 msgid "Save as"
 msgstr "Save as"
 
 #: src/App.tsx:37
+#: src/pages/SettingsPage/index.tsx:12
 msgid "Settings"
 msgstr "Settings"
 
-#: src/components/SidePanel/index.tsx:57
+#: src/components/SidePanel/index.tsx:62
 msgid "Show info..."
 msgstr "Show info..."
 
-#: src/pages/LogBrowserPage/monaco.config.tsx:196
+#: src/pages/LogBrowserPage/monaco.config.tsx:197
 msgid "Successfully copied error messages to clipboard."
 msgstr "Successfully copied error messages to clipboard."
 
-#: src/components/SidePanel/index.tsx:51
+#: src/components/SidePanel/index.tsx:56
 msgid "This log contains error messages, click the button below to view."
 msgstr "This log contains error messages, click the button below to view."
+
+#: src/components/AiPanel/index.tsx:211
+msgid "Tokens"
+msgstr "Tokens"
 
 #: src/components/ModifiedTime/index.tsx:19
 msgid "yesterday"
 msgstr "yesterday"
+
+#: src/components/AiPanel/index.tsx:217
+#: src/components/AiPanel/index.tsx:219
+#: src/components/AiPanel/index.tsx:225
+msgid "上下文"
+msgstr "上下文"
+
+#: src/components/AiPanel/AiConfigFields.tsx:100
+msgid "例如 .../steamapps/common/Don't Starve Together"
+msgstr "例如 .../steamapps/common/Don't Starve Together"
+
+#: src/components/AiPanel/index.tsx:211
+#~ msgid "保存并分析"
+#~ msgstr "保存并分析"
+
+#: src/components/AiPanel/index.tsx:252
+#~ msgid "修改配置"
+#~ msgstr "修改配置"
+
+#: src/components/AiPanel/index.tsx:277
+msgid "分析失败"
+msgstr "分析失败"
+
+#: src/components/AiPanel/index.tsx:315
+msgid "可能的原因"
+msgstr "可能的原因"
+
+#: src/components/AiPanel/index.tsx:355
+msgid "处理建议"
+msgstr "处理建议"
+
+#: src/components/AiPanel/index.tsx:235
+#~ msgid "已用时"
+#~ msgstr "已用时"
+
+#: src/components/SidePanel/index.tsx:151
+#: src/components/AiPanel/AiConfigFields.tsx:79
+msgid "接口域名"
+msgstr "接口域名"
+
+#: src/components/AiPanel/AiConfigFields.tsx:79
+msgid "接口域名（可选）"
+msgstr "接口域名（可选）"
+
+#: src/components/AiPanel/AiConfigFields.tsx:37
+msgid "服务商"
+msgstr "服务商"
+
+#: src/components/SidePanel/index.tsx:141
+#: src/components/AiPanel/AiConfigFields.tsx:68
+msgid "模型名称"
+msgstr "模型名称"
+
+#: src/components/AiPanel/index.tsx:80
+msgid "模型正在思考…"
+msgstr "模型正在思考…"
+
+#: src/components/AiPanel/index.tsx:296
+msgid "模型这次没有返回可展示的结论，请重试；若反复出现，可换用其它模型。"
+msgstr "模型这次没有返回可展示的结论，请重试；若反复出现，可换用其它模型。"
+
+#: src/components/AiPanel/index.tsx:182
+msgid "正在准备…"
+msgstr "正在准备…"
+
+#: src/components/AiPanel/index.tsx:252
+msgid "正在分析…"
+msgstr "正在分析…"
+
+#: src/components/AiPanel/AiConfigFields.tsx:94
+msgid "游戏安装目录（可选）"
+msgstr "游戏安装目录（可选）"
+
+#: src/components/AiPanel/AiConfigFields.tsx:83
+msgid "留空使用官方接口；也可填写代理地址"
+msgstr "留空使用官方接口；也可填写代理地址"
+
+#: src/components/AiPanel/AiConfigFields.tsx:94
+msgid "留空自动检测；无法读取游戏源码时再填写"
+msgstr "留空自动检测；无法读取游戏源码时再填写"
+
+#: src/components/AiPanel/index.tsx:338
+msgid "相关模组"
+msgstr "相关模组"
+
+#: src/components/AiPanel/index.tsx:214
+#: src/components/AiPanel/index.tsx:224
+msgid "缓存命中"
+msgstr "缓存命中"
+
+#: src/components/AiPanel/index.tsx:277
+msgid "请先在左侧配置 API Key 与模型名称。"
+msgstr "请先在左侧配置 API Key 与模型名称。"
+
+#: src/components/SidePanel/index.tsx:86
+msgid "请填写 API Key"
+msgstr "请填写 API Key"
+
+#: src/components/SidePanel/index.tsx:87
+msgid "请填写接口域名"
+msgstr "请填写接口域名"
+
+#: src/components/SidePanel/index.tsx:87
+msgid "请填写模型名称"
+msgstr "请填写模型名称"
+
+#: src/components/AiPanel/index.tsx:212
+#: src/components/AiPanel/index.tsx:222
+msgid "输入"
+msgstr "输入"
+
+#: src/components/AiPanel/index.tsx:213
+#: src/components/AiPanel/index.tsx:223
+msgid "输出"
+msgstr "输出"
+
+#: src/components/AiPanel/AiConfigFields.tsx:105
+msgid "配置只保存在本机，仅分析时发送给你选择的服务商。"
+msgstr "配置只保存在本机，仅分析时发送给你选择的服务商。"
+
+#: src/components/AiPanel/index.tsx:298
+#: src/components/AiPanel/index.tsx:361
+msgid "重新分析"
+msgstr "重新分析"
+
+#: src/components/AiPanel/index.tsx:279
+msgid "重试"
+msgstr "重试"
+
+#: src/components/AiPanel/index.tsx:203
+#~ msgid "首次使用请先配置大模型服务；配置只保存在本机。"
+#~ msgstr "首次使用请先配置大模型服务；配置只保存在本机。"

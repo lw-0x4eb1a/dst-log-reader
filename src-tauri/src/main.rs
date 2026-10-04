@@ -7,14 +7,16 @@ mod steam_workshop;
 mod bootstrap;
 mod menu;
 mod window;
+mod ai;
 
 use ds_log::{list_all_logs, load_log_abstract, load_log_init, load_log_handshake};
 use steam_workshop::{get_steam_workshop_icon, SteamWorkshopIconManager};
 use window::{open_log};
 use menu::{open_tool_menu, setup_menu, MenuRef, RecentFileList};
 use tauri::Manager;
-use bootstrap::{open_url, show_file, show_file_by_label, save_file};
+use bootstrap::{open_url, show_file, show_file_by_label, save_file, open_settings_window};
 use ds_log::LogModelState;
+use ai::ai_analyze;
 
 #[macro_use]
 extern crate rental; 
@@ -45,7 +47,9 @@ fn main() {
             show_file,
             show_file_by_label,
             save_file,
+            open_settings_window,
             get_steam_workshop_icon,
+            ai_analyze,
             shutdown,
         ])
         .on_window_event(|window, event| match event {

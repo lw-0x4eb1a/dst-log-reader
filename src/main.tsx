@@ -17,7 +17,9 @@ function getLanguage(): "zh" | "en" {
 }
 
 i18n.load({en, zh})
-i18n.activate(getLanguage());
+const language = getLanguage()
+i18n.activate(language);
+window.currentLocale = language
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

@@ -196,10 +196,10 @@ impl LogState {
 
 #[derive(Debug, Clone, Default)]
 pub struct Mod {
-    moddir: String,
-    name: String,
-    version: Option<String>,
-    workshop_id: Option<String>,
+    pub moddir: String,
+    pub name: String,
+    pub version: Option<String>,
+    pub workshop_id: Option<String>,
 }
 
 fn utf8_first(s: &str, n: usize) -> &str {
@@ -864,6 +864,28 @@ impl LogModelState {
     pub fn get_path(&self, label: &str) -> Option<PathBuf> {
         let logs = self.logs.lock().unwrap();
         logs.get(label).map(|log| log.path.get_path().to_path_buf())
+    }
+
+    /// Full log location, needed to read cloud (zip) logs as well.
+    pub fn get_log_path(&self, label: &str) -> Option<LogPath> {
+        let logs = self.logs.lock().unwrap();
+        logs.get(label).map(|log| log.path.clone())
+    }
+
+    /// Mods loaded according to the parsed log.
+    pub fn get_mods(&self, label: &str) -> Vec<Mod> {
+        let logs = self.logs.lock().unwrap();
+        match logs.get(label) {
+            Some(log) => log
+                .comment
+                .lock()
+                .unwrap()
+                .mods
+                .values()
+                .cloned()
+                .collect(),
+            None => vec![],
+        }
     }
 }
 

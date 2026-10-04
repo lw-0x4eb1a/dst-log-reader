@@ -25,9 +25,10 @@ pub fn open_unique_window(handle: &tauri::AppHandle, label: &str, _url: Option<S
                 "settings"=> {
                     WebviewWindowBuilder::new(handle, label, WebviewUrl::App("".into()))
                         .title("Settings")
-                        .resizable(false)
+                        .resizable(true)
                         .maximizable(false)
-                        .inner_size(300.0, 250.0)
+                        .inner_size(420.0, 600.0)
+                        .min_inner_size(360.0, 400.0)
                         .build()?;
                 },
                 s => {

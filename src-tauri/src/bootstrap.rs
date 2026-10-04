@@ -47,6 +47,12 @@ pub fn show_file(handle: tauri::AppHandle, path: String) {
     handle.opener().reveal_item_in_dir(path).ok();
 }
 
+/// Open (or focus) the settings window, eg from the AI section of a log window.
+#[tauri::command]
+pub fn open_settings_window(handle: tauri::AppHandle) -> Result<(), String> {
+    crate::window::open_unique_window(&handle, "settings", None).map_err(|e| e.to_string())
+}
+
 #[tauri::command]
 pub fn show_file_by_label(handle: tauri::AppHandle, label: String) {
     use tauri_plugin_opener::OpenerExt;
